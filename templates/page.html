@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+{% block sidebar_bottoms %}
+    {% include "partial/toc.html" %}
+{% endblock sidebar_bottoms %}
+{% block content %}
+    <div class="blog">
+        <h1 class="post-title">
+            {{ page.title }}</h1>
+        <div class="post-info">
+            <i data-feather="clock"></i>
+            <div class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</div>
+            
+            {% if page.updated %}
+                <i data-feather="edit"></i> 
+                <div class="post-date">{{ page.updated | date(format="%Y-%m-%d") }}</div>
+            {% endif %}
+           
+            {% if page.taxonomies.categories %}
+                {% for category in page.taxonomies.categories %}
+                    {% set cate_url = get_taxonomy_url(kind="categories", name=category, lang=page.lang) %}
+                    <a class="post-category" href="{{ cate_url }}">{{ category }}</a>
+                {% endfor %}
+            {% endif %}
+            {% if page.taxonomies.tags %}
+                <i data-feather="tag"></i>
+                {% for tag in page.taxonomies.tags %}
+                    {% set tag_url = get_taxonomy_url(kind="tags", name=tag, lang=page.lang) %}
+                    <a class="post-tag" href="{{ tag_url }}">{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% if page.extra.cover %}
+            <div class="post-cover"><img class="lazyload" data-src="{{ page.extra.cover }}"/>
+            </div>
+        {% endif %}
+        <article class="post-type">
+            {{ page.content | safe }}
+        </article>
+        <div class="divider"></div>
+        {% block comment %}
+            {% if config.extra.utterances.enable %}
+                <div id="comment">
+                    <div class="comment-placeholder">
+                        <i data-feather="loader"></i>Loading……</div>
+                    <script async crossorigin="{{ config.extra.utterances.crossorigin }}" issue-term="{{ config.extra.utterances.issue_term }}" repo="{{ config.extra.utterances.repo }}" src="https://utteranc.es/client.js" theme="{{ config.extra.utterances.theme }}"></script>
+                </div>
+            {% endif %}
+        {% endblock comment %}
+    </div>
+{% endblock content %}

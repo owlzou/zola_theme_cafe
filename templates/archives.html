@@ -1,0 +1,18 @@
+{% import "partial/post_list.html" as macros %}
+{% extends "base.html" %}
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+{% block content %}
+    {% set section = get_section(path="posts/_index.md") %}
+    {% for year, posts in section.pages | group_by(attribute="year") %}
+        <h2 class="post-title" id="{{ year }}">{{ year }}</h2>
+        <div class="archives">
+            <ul>
+                {% for post in posts %}
+                    {{ macros::post_list(title=post.title, permalink=post.permalink,date= post.date) }}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock content %}

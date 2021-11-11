@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+{% block content %}
+    <h2 class="post-title">
+        {{ page.title }}
+    </h2>
+    <div class="project">
+        {% set data = load_data(path="content/projects/data.toml") %}
+        {% if data.projects %}
+            {% for item in data.projects %}
+                <div class="card">
+                    {% if item.cover != "" %}
+                        <div class="project-cover">
+                            <img class="lazyload" data-src="{{ item.cover }}"/>
+                        </div>
+                    {% endif %}
+                    <h3 class="title">
+                        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                    </h3>
+                    <div class="project-description post-type">
+                        {{ item.description | safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% import "partial/post_list.html" as macros %}
+{% extends "base.html" %}
+{% block title %}
+    {{ taxonomy.name }} | {{ config.title }}
+{% endblock title %}
+{% block content %}
+    <h2 class="post-title">
+        {% filter upper %}
+            {{ taxonomy.name }} : {{ term.name }}
+        {% endfilter %}
+    </h2>
+    <div class="archives">
+        <ul>
+            {% for post in term.pages %}
+                {{ macros::post_list(title=post.title, permalink=post.permalink,date=post.date) }}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

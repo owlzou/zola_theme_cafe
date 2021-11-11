@@ -1,0 +1,16 @@
+<ul class="toc">
+    {% for h2 in page.toc %}
+        <li >
+            <a id="to-{{h2.id}}" href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+            {% if h2.children %}
+                <ul>
+                    {% for h3 in h2.children %}
+                        <li >
+                            <a id="to-{{h3.id}}" href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

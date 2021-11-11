@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+{% block content %}
+    <h2 class="post-title">
+        {{ page.title }}
+    </h2>
+    <div class="search">
+        <div class="search-bar">
+            <input id="search" type="text"/>
+            <i data-feather="search"></i>
+        </div>
+        <div class="search-results">
+            <div class="search-results__items"></div>
+        </div>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script src="{{ config.base_url }}elasticlunr.min.js"></script>
+    <script src="{{ config.base_url }}search_index.{{ config.default_language }}.js"></script>
+    <script src="{{ config.base_url }}search.js"></script>
+    {{ super() }}
+{% endblock script %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ config.title }}
+{% endblock title %}
+{% block content %}
+  {% set section = get_section(path="posts/_index.md") %}
+  {% for page in section.pages | slice(end=config.extra.paginate_by) %}
+    <div class="post">
+      <h3 class="post-title">
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+      </h3>
+      <div class="post-content">
+        {% if page.extra.cover %}
+          {% if page.extra.cover is starting_with("http") %}
+            <div class="post-cover"><img class="lazyload" data-src="{{ page.extra.cover }}"/>
+            </div>
+          {% else %}
+            <div class="post-cover"><img class="lazyload" data-src="{{ page.permalink }}{{ page.extra.cover }}"/>
+            </div>
+          {% endif %}
+        {% endif %}
+        <div class="post-type">
+          {% if  page.description %}
+            <p>{{ page.description }}</p>
+          {% else %}
+            {{ page.summary|safe }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="post-info">
+        <i data-feather="clock"></i>
+        <div class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</div>
+        {% if page.taxonomies.categories %}
+          {% for category in page.taxonomies.categories %}
+            {% set cate_url = get_taxonomy_url(kind="categories", name=category, lang=page.lang) %}
+            <a class="post-category" href="{{ cate_url }}">{{ category }}</a>
+          {% endfor %}
+        {% endif %}
+        {% if page.taxonomies.tags %}
+          {% for tag in page.taxonomies.tags %}
+            {% set tag_url = get_taxonomy_url(kind="tags", name=tag, lang=page.lang) %}
+            <a class="post-tag" href="{{ tag_url }}">{{ tag }}</a>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="divider"></div>
+    </div>
+  {% endfor %}
+  <ul class="pagination">
+    {% set i = section.pages|length %}
+    <!-- 进位除法 -->
+    {% set total_page = i / config.extra.paginate_by  |  round(method="ceil") | int %}
+    {% for page in range(end = total_page) %}
+      {% if 1 == loop.index %}
+        <li class="pagination-current">
+        {% else %}
+          <li>
+          {% endif %}
+          <a href="{{ section.permalink }}page/{{ loop.index }}">{{ loop.index }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ taxonomy.name }} | {{ config.title }}
+{% endblock title %}
+{% block content %}
+    <h2 class="post-title">
+        {% filter upper %}
+            {{ taxonomy.name }}
+        {% endfilter %}
+    </h2>
+    <ul class="categories">
+        {% for item in terms %}
+            <li>
+                <a class="post-tag" href="{{ item.permalink }}">
+                    {{ item.name }} ({{ item.pages | length }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

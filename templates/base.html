@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default(value='en') }}">
+  <head>
+    {% block head %}
+      <meta charset="UTF-8"/>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+      <link href="{{ config.base_url }}style.css" rel="stylesheet"/>
+      <link href="{{ config.base_url }}favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+      <link href="{{ config.base_url }}favicon.ico" rel="icon" type="image/x-icon"/>
+      <title>
+        {% block title %}{% endblock title %}
+      </title>
+    {% endblock head %}
+  </head>
+  <body>
+    <div class="background"></div>
+    {% include "partial/fab.html" %}
+    {% if config.extra.decoration %}
+      <div class="grass"></div>
+    {% endif %}
+    <div class="wrapper">
+      <div
+        class="container">
+        <!-- sidebar -->
+        {% block sidebar %}
+          <div class="sidebar">
+            <div class="title"><a href="{{config.base_url}}">{{ config.title }}</a></div>
+            <div class="divider"></div>
+            <nav>
+              <div class="moblie-header">
+                <div class="moblie-title">{{ config.title }}</div>
+              </div>
+              <ul>
+                {% for nav in config.extra.nav %}
+                  <li>
+                    <a href="{{ nav.url }}">{{ nav.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              <div class="side-buttons">
+                {% block sidebar_buttons %}
+                  {% for btn in config.extra.social %}
+                    {% if btn.link is starting_with("/") %}
+                      <a class="side-button" href="{{ btn.link }}">
+                        <i data-feather="{{ btn.icon }}"></i>
+                      </a>
+                    {% else %}
+                      <a class="side-button" href="{{ btn.link }}" target="_blank">
+                        <i data-feather="{{ btn.icon }}"></i>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                {% endblock sidebar_buttons %}
+              </div>
+            </nav>
+            <div class="toc-wrapper">
+              {% block sidebar_bottoms %}
+                <!--博文页面的 toc 会直接覆盖这一块，其他页面都是 tag-->
+                {% include "partial/tag_group.html" %}
+              {% endblock sidebar_bottoms %}
+            </div>
+            {% if config.extra.decoration %}
+              <svg class="bigcat" viewbox="0 0 92.685 127.487" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50.87 0l6.682 15.234-2.405 1.87c-12.421-3.946-11.914-4.366-17.373-6.413 3.134 22.379 7.721 39.56 17.908 40.892-4.452 9.927-9.597 25.157-12.4 38.035a128.59 128.59 0
+                  00-2.016-5.921c-3.92-10.581-10.056-20.87-22.207-26.16a11.983 11.983 0 00-5.147-1.005c-5.124.144-9.936 3.547-12.203 8.532-3.023 6.645-2.272 15.953 4.162 25.388 3.005 4.407 9.615-.1
+                  6.61-4.507-5.239-7.682-5.133-13.955-3.489-17.569 1.644-3.614 6.484-4.988 9.279-3.77 9.64 4.197 11.906 10.583 15.493 20.266 2.827 7.631 4.722 17.886 7.65 26.067.967 9.304 5.264
+                  15.882 15.069 16.548H74.39c29.742-7.229 15.084-36.557 6.682-78.31C113.317 24.689 61.539 4.242 50.87 0z"></path>
+              </svg>
+            {% endif %}
+          </div>
+        {% endblock sidebar %}
+        <!-- main -->
+        <div class="main">
+          <div class="moblie-header" id="moblie-header">
+            <div class="moblie-title">{{ config.title }}</div>
+            <button class="burger">
+              <i data-feather="menu"></i>
+            </button>
+          </div>
+          <!-- content -->
+          {% block content %}{% endblock content %}
+          <div class="footer">
+            <p>
+              {% block copyright %}
+                &copy;
+                <a href="{{ config.base_url }}">{{ config.title }}</a>
+                {{ config.extra.copyright_start_year }}-{{ now() | date(format="%Y") }}
+              {% endblock copyright %}
+            </p>
+            <p>Powered by
+              <a href="https://www.getzola.org/">Zola</a>
+              | Theme
+              <a href="">Cafe</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% block script %}
+      <script src="{{ config.base_url }}script.js"></script>
+      <script onload="icon_loaded()" src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    {% endblock script %}
+  </body>
+</html>

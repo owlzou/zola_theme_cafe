@@ -1,0 +1,61 @@
+name = "Cafe"
+description = "blog theme"
+license = "MIT"
+homepage = "https://github.com/owlzou/zola-theme-cafe"
+# The minimum version of Zola required
+min_version = "0.4.0"
+# An optional live demo URL
+demo = ""
+
+# Any variable there can be overriden in the end user `config.toml`
+# You don't need to prefix variables by the theme name but as this will
+# be merged with user data, some kind of prefix or nesting is preferable
+# Use snake_casing to be consistent with the rest of Zola
+[extra]
+
+#Site start year
+copyright_start_year = "2019"
+
+# Same as post/_index.md/paginate_by, for show posts pagination at home page.
+paginate_by = 9
+
+# Show cat & grass svg
+decoration = true
+
+# Navigation 
+nav = [
+    {title="HOME",url="/"},
+    {title="ARCHIVES",url="/archives"},
+    {title="TAGS", url="/tags"},
+    {title="PROJECTS",url="/projects"},
+    {title="ABOUT",url="/about"}
+]
+
+# Use icon name from featherIcon https://feathericons.com/
+social = [
+    {icon="github",link="https://github.com/owlzou"}
+]
+
+# Utterances: A lightweight comments widget built on GitHub issues. 
+# https://utteranc.es/
+[extra.utterances]
+enable = false
+repo=""
+issue_term="pathname"
+theme="github-light"
+crossorigin="anonymous"
+
+# For `projects page`, put toml in content/projects/data.toml
+# File content like:
+# 
+# [[projects]]
+# title = ""
+# link = ""
+# cover = ""
+# description=""
+
+# The theme author info: you!
+[author]
+name = "Owlzou"
+homepage = "https://github.com/owlzou/"
+

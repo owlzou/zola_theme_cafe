@@ -1,0 +1,156 @@
+$code-color: #a22008;
+$table-cell-background: #f0ede7;
+$table-border: #c4c2c2;
+$a-color: #fbcf95;
+$a-color2: var(--second-color);
+$post-color: #555;
+$blockquote-color: #f9eee4;
+$blockquote-side-color: $a-color;
+$detail-background: $blockquote-color;
+
+.post-type {
+  color: $post-color;
+  font-family: $serif-font;
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  :not(pre) > code {
+    margin: 2px;
+    padding: 2px;
+    color: $code-color;
+    font-size: 0.9rem;
+    &:before {
+      content: "`";
+    }
+    &:after {
+      content: "`";
+    }
+  }
+
+  p {
+    //text-indent: 2em;
+    line-height: 1.5;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      list-style-type: square;
+      p {
+        text-indent: 0;
+        margin: 0 0;
+      }
+    }
+  }
+
+  ol {
+    padding-left: 20px;
+
+    li {
+      list-style-type: decimal;
+    }
+  }
+
+  pre {
+    padding: 10px 20px;
+    overflow: auto;
+    font-size: 15px;
+    border: 1px dashed var(--dark-color);
+    position: relative;
+  }
+
+  table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: 1px solid $table-border;
+    font-size: 0.9rem;
+  }
+
+  /*th {
+    background: $table-background;
+  }*/
+
+  tbody tr:nth-child(odd) {
+    background: $table-cell-background;
+  }
+
+  th,
+  td {
+    border: 1px solid $table-border;
+    overflow: visible;
+    padding: 10px;
+  }
+
+  blockquote {
+    background: $blockquote-color;
+    margin: 16px 0;
+    padding: 8px 32px;
+    border-left: 8px solid $blockquote-side-color;
+  }
+
+  a {
+    box-shadow: 0 -6px 0 $a-color inset;
+    transition: all 0.3s;
+
+    code {
+      background: transparent;
+      color: $code-color;
+    }
+  }
+  a:hover {
+    box-shadow: 0 -18px 0 $a-color inset;
+    //color: #fff;
+  }
+
+  img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  details {
+    padding: 20px;
+    background: $detail-background;
+    border-radius: 10px;
+
+    summary {
+      cursor: pointer;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    &::before {
+      content: "# ";
+      color: var(--second-color);
+    }
+    code {
+      background: inherit;
+    }
+  }
+
+  .reference {
+    padding: 10px 20px;
+    border: 1px dashed var(--second-color);
+    margin-top: 50px;
+    font-size: 0.9rem;
+
+    &-title {
+      font-weight: bold;
+    }
+
+    svg {
+      position: relative;
+      bottom: -6px;
+      margin-right: 5px;
+      color: var(--second-color);
+    }
+  }
+}
