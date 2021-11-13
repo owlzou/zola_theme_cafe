@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+
+{% block content %}
+    {% set tags = get_taxonomy(kind="tags") %} 
+    <h2 class="post-title">Tags</h2>
+    <ul class="categories">
+        {% for item in tags.items %}
+            <li>
+                <a class="post-tag" href="{{ item.permalink }}">
+                    {{ item.name }} ({{ item.pages | length }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% set categories = get_taxonomy(kind="categories") %} 
+    <h2 class="post-title">Categories</h2>
+    <ul class="categories">
+        {% for item in categories.items %}
+            <li>
+                <a class="post-tag" href="{{ item.permalink }}">
+                    {{ item.name }} ({{ item.pages | length }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

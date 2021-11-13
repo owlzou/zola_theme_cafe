@@ -16,24 +16,17 @@ demo = ""
 # Site start year
 copyright_start_year = "2019"
 
-# Same as post/_index.md/paginate_by, for show posts pagination at home page.
-paginate_by = 9
-
-# Show cat & grass svg
+# Show grass svg
 decoration = true
 
 # Navigation 
-nav = [
-    {title="HOME",url="/"},
-    {title="ARCHIVES",url="/archives"},
-    {title="TAGS", url="/tags"},
-    {title="PROJECTS",url="/projects"},
-    {title="ABOUT",url="/about"}
-]
-
 # Use icon name from featherIcon https://feathericons.com/
-social = [
-    {icon="github",link="https://github.com/owlzou"}
+nav = [
+    {icon="feather",title="Blog",url="/posts"},
+    {icon="archive",title="Archive",url="/archives"},
+    {icon="star",title="Project",url="/projects"},
+    {icon="alert-circle",title="About",url="/about"},
+    {icon="tag",title="Taxonomies",url="/taxonomies"},
 ]
 
 # Utterances: A lightweight comments widget built on GitHub issues. 
