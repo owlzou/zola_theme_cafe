@@ -1,12 +1,16 @@
 $code-color: #a22008;
 $table-cell-background: #f0ede7;
 $table-border: #c4c2c2;
+
 $a-color: #fbcf95;
 $a-color2: var(--second-color);
+
 $post-color: #555;
 $blockquote-color: #f9eee4;
 $blockquote-side-color: $a-color;
-$detail-background: $blockquote-color;
+
+$detail-background: #eee;
+$summary-background: var(--light-bg);
 
 .post-type {
   color: $post-color;
@@ -114,12 +118,17 @@ $detail-background: $blockquote-color;
   }
 
   details {
-    padding: 20px;
     background: $detail-background;
-    border-radius: 10px;
+    // border: 1px solid $summary-background;
 
     summary {
       cursor: pointer;
+      padding: 5px;
+      color: $post-color;
+      background: $summary-background;
+    }
+    > div {
+      padding: 10px;
     }
   }
 
@@ -152,5 +161,12 @@ $detail-background: $blockquote-color;
       margin-right: 5px;
       color: var(--second-color);
     }
+  }
+
+  figcaption {
+    text-align: center;
+    font-family: $serif-font;
+    font-size: 0.9rem;
+    font-style: italic;
   }
 }

@@ -13,7 +13,7 @@ demo = ""
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
-#Site start year
+# Site start year
 copyright_start_year = "2019"
 
 # Same as post/_index.md/paginate_by, for show posts pagination at home page.

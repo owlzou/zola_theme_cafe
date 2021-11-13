@@ -7,6 +7,15 @@
                     {% for h3 in h2.children %}
                         <li >
                             <a id="to-{{h3.id}}" href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                            {% if h3.level == 2 and h3.children %}
+                                <ul>
+                                    {% for h4 in h3.children %}
+                                        <li>
+                                            <a id="to-{{h4.id}}" href="{{ h4.permalink | safe }}">{{ h4.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>

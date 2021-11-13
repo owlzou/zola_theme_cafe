@@ -1,0 +1,28 @@
+<!-- 顶端导航 -->
+<div class="top-nav">
+  <div class="title"><a href="{{config.base_url}}">{{ config.title }}</a></div>
+  <nav class="navs">
+    <ul>
+      {% for btn in config.extra.nav %}
+      <ol>
+        {% if btn.url is starting_with("/") %}
+        <a class="side-button" href="{{ btn.url }}" title="{{btn.title}}">
+          <i data-feather="{{ btn.icon }}"></i>
+          <span class="tip">{{btn.title}}</span>
+        </a>
+        {% else %}
+        <a
+          class="side-button"
+          href="{{ btn.url }}"
+          target="_blank"
+          title="{{btn.title}}"
+        >
+          <i data-feather="{{ btn.icon }}"></i>
+           <span class="tip">{{btn.title}}</span>
+        </a>
+        {% endif %}
+      </ol>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

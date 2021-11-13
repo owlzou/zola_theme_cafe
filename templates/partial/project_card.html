@@ -1,0 +1,13 @@
+{% macro project_card(item) %}
+<div class="card">
+  {% if item.cover != "" %}
+  <div class="project-cover">
+    <img class="lazyload" data-src="{{ item.cover }}" />
+  </div>
+  {% endif %}
+  <h3 class="title">
+    <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+  </h3>
+  <div class="project-description post-type">{{ item.description | safe }}</div>
+</div>
+{% endmacro project_card %}

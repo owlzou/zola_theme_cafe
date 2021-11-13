@@ -1,20 +1,20 @@
-$main-padding: 30px;
-$main-width: 900px;
+$main-padding: 16px;
+$main-width: 800px;
 $sidebar-width: 220px;
 $container-width: $main-width + $sidebar-width + 4 * $main-padding;
 $footer-height: 70px;
+$nav-height:56px;
+
+$bubble-width:200px;
 
 $breakpoint-md: $container-width;
-$oswald-font: "girassol", "猫啃网风雅宋", FZYaoti, STFangsong, "Noto Sans SC";
+$breakpoint-bubble: $container-width + ($bubble-width + 13) * 0.6 * 2;
+
+$girassol-font: "girassol", "猫啃网风雅宋", FZYaoti, STFangsong, "Noto Sans SC";
 $sans-font: "Source Han Sans SC", "Source Han Sans CN", "noto sans",  "Microsoft YaHei", "Wenquanyi Micro Hei", STHeiti, SimHei, sans;
 $serif-font: "Source Han Serif SC", "Source Han Serif CN", "WenQuanYi Bitmap Song";
 $default-serif-font:"Times New Roman";
 $mono-font:"Fira Code","ubuntu mono","Source Code Pro","Courier New";
-
-@font-face {
-  font-family: "oswald";
-  src: url("/Oswald-Regular.ttf") format("truetype");
-}
 
 @font-face{
   font-family: "girassol";

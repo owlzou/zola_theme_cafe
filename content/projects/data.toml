@@ -1,0 +1,17 @@
+[[projects]]
+title = "Example Project"
+link = "https://www.github.com"
+cover = ""
+description="This is an example project."
+
+[[projects]]
+title = "Example Project With Image"
+link = "https://www.github.com"
+cover = "/posts/with-image/mel-3IA4-tUDyKI-unsplash.webp"
+description="This is an example project."
+
+[[projects]]
+title = "Example Project With Long Description"
+link = "https://www.github.com"
+cover = ""
+description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta tortor vitae lacus imperdiet consectetur. Suspendisse suscipit arcu facilisis felis ultricies, ut lobortis nunc facilisis. Sed consectetur urna magna, luctus mollis erat sollicitudin et. Sed aliquam, lacus sed tincidunt semper, erat tellus mattis dui, non dignissim quam augue at turpis."

@@ -1,0 +1,8 @@
+<div class="tips tips-{{type}}">
+    {% if type=="info" %}
+        <i data-feather="info"></i>
+    {% elif type=="warning" %}
+        <i data-feather="alert-triangle"></i>
+    {% endif %}
+    <div>{{ body | markdown(inline=true) | safe }}</div>
+</div>

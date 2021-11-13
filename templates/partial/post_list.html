@@ -1,8 +1,0 @@
-{% macro post_list(title,permalink,date) %}
-    <li class="line card">
-        <span class="title">
-            <a href="{{ permalink }}">{{ title }}</a>
-        </span>
-        <div class="post-date">{{ date|date(format="%Y-%m-%d") }}</div>
-    </li>
-{% endmacro post_list %}

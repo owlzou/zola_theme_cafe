@@ -1,0 +1,58 @@
+# The URL the site will be built for
+base_url = "https://owlzou.github.io/"
+
+title = "Catalyst"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+default_language = "en"
+
+taxonomies = [ 
+    {name = "tags"},
+    {name = "categories"}
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "cheerfully-light"
+
+[extra]
+
+nav = [
+    {icon="home",title="Home Page",url="/"},
+    {icon="archive",title="Archive",url="/archives"},
+    {icon="star",title="Project",url="/projects"},
+    {icon="alert-circle",title="About",url="/about"},
+    {icon="tag",title="Tags",url="/tags"},
+    {icon="feather",title="Categories",url="/categories"},
+    {icon="github",title="Github",url="https://github.com/owlzou"}
+]
+
+copyright_start_year = "2019"
+
+# Same as post/_index.md/paginate_by, for show posts pagination at home page.
+paginate_by = 9
+
+# Show cat & grass svg
+decoration = true
+
+# Home page cover image. If you do not need cover image, comment this line.
+cover = "/posts/with-image/mel-3IA4-tUDyKI-unsplash.webp"
+
+# Utterances: A lightweight comments widget built on GitHub issues. 
+# https://utteranc.es/
+# [extra.utterances]
+# enable = true
+# repo="owlzou/owlzou.github.io"
+# issue_term="pathname"
+# theme="github-light"
+# crossorigin="anonymous"
+
+
+
