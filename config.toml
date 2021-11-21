@@ -38,6 +38,9 @@ copyright_start_year = "2019"
 # Show grass svg
 decoration = true
 
+# Website icon
+icon=""
+
 # Home page cover image. If you do not need cover image, comment this line.
 cover = "/posts/with-image/mel-3IA4-tUDyKI-unsplash.webp"
 

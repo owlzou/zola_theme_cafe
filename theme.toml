@@ -19,6 +19,9 @@ copyright_start_year = "2019"
 # Show grass svg
 decoration = true
 
+# Website icon
+# icon="./favicon.ico"
+
 # Navigation 
 # Use icon name from featherIcon https://feathericons.com/
 nav = [

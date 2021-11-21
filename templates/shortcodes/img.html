@@ -1,4 +1,6 @@
 <figure>
-  <img src="{{src}}" width="{{width | default(value='auto')}}" />
-  <figcaption>{{caption}}</figcaption>
+  <img src="{{src}}" width="{{width | default(value='auto')}}"/>
+  {% if caption %}
+    <figcaption>{{caption}}</figcaption>
+  {% endif %}
 </figure>

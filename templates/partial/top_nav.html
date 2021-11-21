@@ -1,6 +1,11 @@
 <!-- 顶端导航 -->
 <div class="top-nav">
-  <div class="title"><a href="{{config.base_url}}">{{ config.title }}</a></div>
+  <div class="title">
+    {% if config.extra.icon %}
+      <div class="website-icon"><img src="{{config.extra.icon}}"/></div>
+    {% endif%}
+    <a href="{{config.base_url}}">{{ config.title }}</a>
+  </div>
   <nav class="navs">
     <ul>
       {% for btn in config.extra.nav %}

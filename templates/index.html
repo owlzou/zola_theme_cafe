@@ -1,5 +1,7 @@
-{% import "partial/post.html" as macros %} {% import "partial/project_card.html"
-as macros2 %} {% extends "base.html" %}
+{% import "partial/post.html" as macros %}
+{% import "partial/project_card.html" as macros2 %}
+{% extends "base.html" %}
+
 <!-- 主页 -->
 {% block title %} {{ config.title }} {% endblock title %} {% block content %} {%
 set section = get_section(path="posts/_index.md") %} {% if config.extra.cover is
@@ -9,9 +11,11 @@ defined %}
 
 <!-- 博文 -->
 <div class="index-module">
-  {% for page in section.pages | slice(end=5) %} {{
-  macros::post_detail_list(page=page) }} {% endfor %} {% if section.pages |
-  length %}
+  {% for page in section.pages | slice(end=5) %} 
+    {{macros::post_detail_list(page=page) }} 
+  {% endfor %}
+
+  {% if section.pages | length %}
   <div class="more-post">
     <a href="/posts" class="retro-btn">More >> </a>
   </div>
@@ -21,9 +25,12 @@ defined %}
 <!-- 项目 -->
 <div class="index-module">
   <div class="project">
-    {% set data = load_data(path="content/projects/data.toml") %} {% if
-    data.projects %} {% for item in data.projects | slice(end=4)%} {{
-    macros2::project_card(item=item) }} {% endfor %} {% endif %}
+    {% set data = load_data(path="content/projects/data.toml") %} 
+    {% if data.projects %} 
+      {% for item in data.projects | slice(end=4)%} 
+        {{macros2::project_card(item=item) }} 
+      {% endfor %} 
+    {% endif %}
   </div>
   {% if section.pages | length %}
   <div class="more-post">

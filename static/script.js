@@ -9,6 +9,9 @@ var top_fixed = false;
 /* -------------------------------------------------------------------------- */
 document.querySelectorAll(".lazyload").forEach((img) => {
   img.src = img.attributes["data-src"].value;
+  img.onload = () => {
+    img.className = "";
+  };
 });
 
 /* -------------------------------------------------------------------------- */

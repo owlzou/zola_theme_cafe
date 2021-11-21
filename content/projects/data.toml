@@ -2,7 +2,7 @@
 title = "Example Project"
 link = "https://www.github.com"
 cover = ""
-description="This is an example project."
+description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta tortor vitae lacus imperdiet consectetur. Suspendisse suscipit arcu facilisis felis ultricies."
 
 [[projects]]
 title = "Example Project With Image"

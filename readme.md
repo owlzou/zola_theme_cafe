@@ -1,7 +1,5 @@
 Simple(?) blog theme for Zola.
 
-Delete `./config.toml` & `content/*` after install.
-
 ## Third Party Code
 
 - featherIcon https://feathericons.com/
@@ -16,10 +14,6 @@ Delete `./config.toml` & `content/*` after install.
 - [x] Favicon
 - [ ] Document
 - [ ] SEO
-
----
-
-Branch v1.0 is sidebar version.
 
 ## Reference
 
