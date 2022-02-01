@@ -39,7 +39,7 @@ copyright_start_year = "2019"
 decoration = true
 
 # Website icon
-icon=""
+icon="/c_icon.png"
 
 # Home page cover image. If you do not need cover image, comment this line.
 cover = "/posts/with-image/mel-3IA4-tUDyKI-unsplash.webp"

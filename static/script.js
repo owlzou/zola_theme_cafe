@@ -96,19 +96,17 @@ if (document.querySelector(".toc") != null) {
     });
   }
   /* ----------------------------------- 开始 ----------------------------------- */
+  window.onload = update_offset();
   update_offset();
   keys = Object.keys(toc);
   keys.sort((a, b) => toc[a] - toc[b]);
-  // console.log(keys);
   if (keys.length > 0) {
     window.addEventListener("scroll", function () {
       let id = getCurId(keys);
       keys.forEach((ele) => {
-        console.log(ele);
         document.getElementById(ele).classList.remove("active");
       });
       document.getElementById(id).classList.add("active");
-      // console.log(id, document.getElementById(id).classList);
       if (document.querySelector("summary")) {
         update_offset();
       }

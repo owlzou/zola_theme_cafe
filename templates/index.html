@@ -3,10 +3,15 @@
 {% extends "base.html" %}
 
 <!-- 主页 -->
-{% block title %} {{ config.title }} {% endblock title %} {% block content %} {%
-set section = get_section(path="posts/_index.md") %} {% if config.extra.cover is
-defined %}
-<img class="cover-image" src="{{config.extra.cover}}" />
+{% block title %} 
+  {{ config.title }}
+{% endblock title %}
+
+{% block content %}
+{% set section = get_section(path="posts/_index.md") %}
+
+{% if config.extra.cover is defined %}
+  <img class="cover-image" src="{{config.extra.cover}}" />
 {% endif %}
 
 <!-- 博文 -->

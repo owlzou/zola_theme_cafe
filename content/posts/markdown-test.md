@@ -107,3 +107,7 @@ function(){
 - [x] Todo 1
 - [ ] Todo 2
 - [ ] Todo 3
+
+# Highlight
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta tortor vitae lacus imperdiet consectetur. Suspendisse suscipit arcu <mark>facilisis felis ultricies, ut lobortis nunc facilisis.</mark> Sed consectetur urna magna, luctus mollis erat sollicitudin et. Sed aliquam, lacus sed tincidunt semper, erat tellus mattis dui, non dignissim quam augue at turpis.

@@ -1,7 +1,9 @@
-$main-padding: 16px;
+// $main-padding: 16px;
 $main-width: 800px;
-$sidebar-width: 220px;
-$container-width: $main-width + $sidebar-width + 4 * $main-padding;
+// $sidebar-width: 220px;
+// $container-width: $main-width + $sidebar-width + 4 * $main-padding;
+$side-width: 100px;
+$container-width: $main-width + 2* $side-width;
 $footer-height: 70px;
 $nav-height:56px;
 

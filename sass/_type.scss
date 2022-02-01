@@ -2,12 +2,11 @@ $code-color: #a22008;
 $table-cell-background: #f0ede7;
 $table-border: #c4c2c2;
 
-$a-color: #fbcf95;
-$a-color2: var(--second-color);
+$mark-color: #ffe375;
 
 $post-color: #555;
 $blockquote-color: #f9eee4;
-$blockquote-side-color: $a-color;
+$blockquote-side-color: #fbcf95;
 
 $detail-background: #eee;
 $summary-background: var(--light-bg);
@@ -35,9 +34,10 @@ $summary-background: var(--light-bg);
 
   p {
     //text-indent: 2em;
-    line-height: 1.2;
-    margin: 1rem 0;
-    font-size: 0.95rem;
+    line-height: 1.5;
+    // margin: 1rem 0;
+    margin: 0.6rem 0;
+    font-size: 16px;
   }
 
   ul {
@@ -98,17 +98,18 @@ $summary-background: var(--light-bg);
   }
 
   a {
-    box-shadow: 0 -6px 0 $a-color inset;
-    transition: all 0.3s;
+    color: #2f7c88;
+    text-decoration: underline;
 
     code {
       background: transparent;
       color: $code-color;
     }
   }
-  a:hover {
-    box-shadow: 0 -18px 0 $a-color inset;
-    //color: #fff;
+
+  mark {
+    box-shadow: 0 -10px 0 $mark-color inset;
+    background: transparent;
   }
 
   img {
