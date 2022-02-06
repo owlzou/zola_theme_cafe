@@ -1,7 +1,7 @@
 # The URL the site will be built for
-base_url = "https://owlzou.github.io/"
+base_url = "https://owlzou.github.io/zola-theme-cafe/"
 
-title = "Catalyst"
+title = "Cafe"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
