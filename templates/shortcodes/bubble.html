@@ -1,0 +1,6 @@
+<div class="post-bubble">
+    <div class="post-bubble__content">{{ body | markdown(inline=true) | safe }}</div>
+    {% if config.extra.icon %}
+      <img src="{{config.extra.bubble_icon}}" class="post-bubble__icon"/>
+    {% endif%}
+</div>

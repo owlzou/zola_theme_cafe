@@ -1,5 +1,5 @@
 +++
-title = "文章"
+title = "Posts"
 sort_by = "date"
 paginate_by = 9
 +++

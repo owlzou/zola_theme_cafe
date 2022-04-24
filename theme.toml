@@ -32,6 +32,9 @@ nav = [
     {icon="tag",title="Taxonomies",url="/taxonomies"},
 ]
 
+# Icon for bubble shortcode
+bubble_icon=""
+
 # Utterances: A lightweight comments widget built on GitHub issues. 
 # https://utteranc.es/
 [extra.utterances]

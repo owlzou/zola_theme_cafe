@@ -11,6 +11,7 @@
 
 @import "_varible";
 @import "_type.scss";
+@import "mixins.scss";
 
 body {
   margin: 0;
@@ -56,7 +57,7 @@ code {
 .cat {
   $padding: 48px;
   position: fixed;
-  bottom: 0;  
+  bottom: 0;
   pointer-events: none;
   .bigcat {
     position: fixed;
@@ -67,39 +68,20 @@ code {
     transform: translateX(-150px + $side-width - $padding);
   }
 
-  .bubble > * {
-    $bubble-bg: var(--light-white);
-    $bubble-border: var(--light-grey);
+  .toc-bubble > * {
     $bubble-padding: 16px;
     pointer-events: auto;
-    position: relative;
     bottom: 250px;
     width: $bubble-width;
-    border: 2px solid $bubble-border;
     left: -$bubble-width - 2 * $bubble-padding + $side-width - $padding;
-    background-color: $bubble-bg;
-    border-radius: 5px;
     padding: $bubble-padding;
-    &::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border: 20px solid;
-      position: absolute;
-      bottom: -40px;
-      right: 10%;
-      border-color: $bubble-border transparent transparent;
-    }
-    &::after {
-      content: "";
-      width: 0;
-      height: 0;
-      border: 20px solid;
-      position: absolute;
-      bottom: -38px;
-      right: 10%;
-      border-color: $bubble-bg transparent transparent;
-    }
+    @include bubble-bottom(
+      5px,
+      20px,
+      20px,
+      var(--light-white),
+      var(--light-grey)
+    );
   }
 }
 
@@ -273,10 +255,10 @@ code {
     // text-align: center;
     color: var(--dark-grey);
     transition: color 0.3s;
-    margin: 16px 0;
+    margin: 0 0 16px 0;
     position: relative;
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-family: $serif-font;
     &::after {
       content: "";
@@ -347,7 +329,7 @@ code {
   }
 
   // 头图
- &-cover {
+  &-cover {
     text-align: center;
     padding: 0px 20px 0px 0px;
 
@@ -364,13 +346,6 @@ code {
 
     p {
       margin: 0;
-    }
-  }
-
-  &-type {
-    flex-grow: 1;
-
-    p {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
       display: -webkit-box;
@@ -401,6 +376,10 @@ code {
 .blog {
   .post-info {
     margin-bottom: 40px;
+  }
+
+  .post-title {
+    font-size: 1.4rem;
   }
 }
 
@@ -819,7 +798,7 @@ code {
 }
 
 @media screen and (max-width: $breakpoint-bubble) {
-  .bubble {
+  .toc-bubble {
     display: none;
   }
 }
@@ -877,6 +856,7 @@ code {
   display: flex;
   margin: 8px 0;
   svg {
+    flex-shrink: 0;
     margin-right: 8px;
   }
   &.tips-info {
@@ -886,5 +866,30 @@ code {
   &.tips-warning {
     background: #f9eee4;
     color: #ac4e2a;
+  }
+}
+
+/* shortcode: bubble */
+.post-bubble {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  margin: 32px 0;
+  &__content {
+    @include bubble-right(
+      8px,
+      16px,
+      8px,
+      var(--light-white),
+      var(--light-grey)
+    );
+    padding: 16px;
+    flex-grow: 1;
+    text-indent: 2rem;
+  }
+  &__icon {
+    width: 64px;
+    top: 8px;
+    position: relative;
   }
 }

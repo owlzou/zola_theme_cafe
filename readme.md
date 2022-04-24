@@ -1,5 +1,3 @@
-Simple(?) blog theme for Zola.
-
 ## Todo
 
 - [ ] Search
