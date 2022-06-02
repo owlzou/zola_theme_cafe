@@ -1,4 +1,4 @@
-//ICONS 目前在<script>标签的onload里执行
+//ICONS 目前在<script>标签的 onload 里执行
 //feather.replace();
 
 var is_menu_open = false;
@@ -145,6 +145,12 @@ function icon_loaded() {
         $btn.innerHTML = `<i data-feather="check">copy complete</i>`;
         $btn.title = "Copy complete";
         feather.replace();
+        // 1 秒后换回来 
+        setTimeout(() => {
+          $btn.innerHTML = $btn.innerHTML = `<i data-feather="copy">copy</i>`;
+          $btn.title = "Copy";
+          feather.replace();
+        }, 1000)
       }
     };
     ele.parentNode.insertBefore($btn, ele);

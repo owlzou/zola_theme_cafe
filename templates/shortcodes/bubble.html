@@ -1,6 +1,23 @@
-<div class="post-bubble">
-    <div class="post-bubble__content">{{ body | markdown(inline=true) | safe }}</div>
-    {% if config.extra.icon %}
-      <img src="{{config.extra.bubble_icon}}" class="post-bubble__icon"/>
-    {% endif%}
+{% if left %}
+<div class="post-bubble left">
+  {% if icon %}
+  <img src="{{icon}}" class="post-bubble__icon" />
+  {% elif config.extra.icon %}
+  <img src="{{config.extra.icon}}" class="post-bubble__icon" />
+  {% endif%}
+  <div class="post-bubble__content">
+    {{ body | markdown(inline=true) | safe }}
+  </div>
 </div>
+{% else %}
+<div class="post-bubble">
+  <div class="post-bubble__content">
+    {{ body | markdown(inline=true) | safe }}
+  </div>
+  {% if icon %}
+  <img src="{{icon}}" class="post-bubble__icon" />
+  {% elif config.extra.icon %}
+  <img src="{{config.extra.icon}}" class="post-bubble__icon" />
+  {% endif%}
+</div>
+{% endif%}

@@ -147,7 +147,6 @@ code {
     border-radius: $buttonR;
     display: inline-block;
     align-items: center;
-    // color: #fff;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -214,8 +213,6 @@ code {
 }
 
 .main {
-  // padding-top: $main-padding;
-  // padding-left: calc(50% - #{$main-width / 2});
   margin: 0 auto;
   padding-bottom: $footer-height;
   width: $main-width;
@@ -252,7 +249,6 @@ code {
   }
 
   &-title {
-    // text-align: center;
     color: var(--dark-grey);
     transition: color 0.3s;
     margin: 0 0 16px 0;
@@ -267,8 +263,6 @@ code {
       width: 10%;
       height: 0.3rem;
       position: relative;
-      // left: 50%;
-      // transform: translateX(-50%);
       transition: width 0.3s;
     }
     &:hover {
@@ -803,33 +797,12 @@ code {
   }
 }
 
-/* .side-taxonomy {
-  margin-top: 15px;
-} 
-
-.side-taxonomy-item {
-  padding: 4px;
-  margin: 4px;
-  border: 1px dashed var(--dark-color);
-  display: inline-block;
-  line-height: 24px;
-  transition-property: border, color;
-  transition-duration: 0.3s;
-  font-family: $default-serif-font;
-  color: var(--dark-color);
-  &:hover {
-    border: 1px solid var(--plant-color);
-    color: var(--plant-color);
-  }
-}*/
-
 /* --------------------------------- HELPER --------------------------------- */
 .retro-btn {
   $color: var(--dark-color);
   position: relative;
   padding: 8px 16px;
   display: inline-block;
-  // background: var(--light-white);
   color: $color;
   &:hover {
     color: var(--plant-color);
@@ -891,5 +864,17 @@ code {
     width: 64px;
     top: 8px;
     position: relative;
+  }
+
+  &.left{
+    .post-bubble__content{
+      @include bubble-left(
+      8px,
+      16px,
+      8px,
+      var(--light-white),
+      var(--light-grey)
+    );
+    }
   }
 }
