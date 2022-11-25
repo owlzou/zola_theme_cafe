@@ -111,3 +111,9 @@ function(){
 # Highlight
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta tortor vitae lacus imperdiet consectetur. Suspendisse suscipit arcu <mark>facilisis felis ultricies, ut lobortis nunc facilisis.</mark> Sed consectetur urna magna, luctus mollis erat sollicitudin et. Sed aliquam, lacus sed tincidunt semper, erat tellus mattis dui, non dignissim quam augue at turpis.
+
+# KaTeX 
+
+Inline: $ f(x) = x^2 + 6x + 7 $
+
+Block: $$ f(x) = \frac{x^3 + 2}{x^2 + 6x + 2} $$

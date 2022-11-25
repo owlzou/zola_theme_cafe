@@ -47,5 +47,6 @@ bubble_icon="/c_icon.png"
 # Home page cover image. If you do not need cover image, comment this line.
 cover = "/posts/with-image/mel-3IA4-tUDyKI-unsplash.webp"
 
-
+# Enable KaTeX support
+enable_katex = true
 
