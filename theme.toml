@@ -19,6 +19,9 @@ copyright_start_year = "2019"
 # Show grass svg
 decoration = true
 
+# Enable KaTeX support
+enable_katex = true
+
 # Website icon
 # icon="/favicon.ico"
 
@@ -28,7 +31,7 @@ nav = [
     {icon="feather",title="Blog",url="/posts"},
     {icon="archive",title="Archive",url="/archives"},
     {icon="star",title="Project",url="/projects"},
-    {icon="alert-circle",title="About",url="/about"},
+    {icon="alert_circle",title="About",url="/about"},
     {icon="tag",title="Taxonomies",url="/taxonomies"},
 ]
 
@@ -41,7 +44,24 @@ bubble_icon=""
 enable = false
 repo=""
 issue_term="pathname"
-theme="github-light"
+theme="github_light"
+crossorigin="anonymous"
+
+# giscus: A comment system powered by GitHub Discussions. :octocat: 💬 💎
+# https://github.com/giscus/giscus
+[extra.giscus]
+enable=false
+repo=""
+repo_id=""
+category="Announcements"
+category_id=""
+mapping="pathname"
+strict="0"
+reactions_enabled="1"
+emit_metadata="0"
+input_position="bottom"
+theme="preferred_color_scheme"
+lang=""
 crossorigin="anonymous"
 
 # For `projects page`, put toml in content/projects/data.toml
